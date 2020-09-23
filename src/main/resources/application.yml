@@ -1,0 +1,46 @@
+app:
+  url: http://localhost:8090
+  integration:
+    enabled: false
+
+server:
+  port: 8090
+  max-http-header-size: 48000
+
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/openpayd?useUnicode=yes&characterEncoding=UTF-8
+    platform: platform
+    username: postgres
+    password: 4544758
+    continue-on-error: false
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          batch_size: 400
+        order_inserts: true
+        format_sql: false
+    hibernate:
+       ddl-auto: update	    
+    database: POSTGRESQL
+    show-sql: true
+  http:
+    encoding:
+      force: true
+
+    
+logging:
+  level:
+    root: DEBUG
+    com:
+      openpayd: DEBUG    
+    
+client:
+  ratesapiurl: https://api.ratesapi.io/api/ 
+    
+resttemplate:
+   connectiontimeout: 300000    
+    
+    
